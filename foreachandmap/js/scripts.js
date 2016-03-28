@@ -3,6 +3,7 @@ var groceriesAlpha = [];
 
 $(document).ready(function() {
   $("#blanks form").submit(function(event) {
+    event.preventDefault();
     var groceries = ["grocery1", "grocery2", "grocery3", "grocery4", "grocery5"];
 
     groceries.forEach(function(grocery) {
@@ -20,7 +21,15 @@ $(document).ready(function() {
 
     console.log(groceriesUpper);
 
-    event.preventDefault();
+    $(".thisForm").hide();
+
+    groceriesUpper.forEach(function(list) {
+      $("ul").append("<li>" + list + "</li>");
+    });
+
+    $(".result").show();
+
+
   });
 });
     //
